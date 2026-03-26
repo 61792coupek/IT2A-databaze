@@ -17,7 +17,7 @@ namespace it2a_databaze
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ObservableCollection<Kopacky> ModelyKopacek { get; set; } = new ObservableCollection<Kopacky>();
+        public ObservableCollection<Kopacky> ModelyKopacek { get; set; } = new ObservableCollection<Kopacky>();
         public MainWindow()
         {
             InitializeComponent();
@@ -31,9 +31,75 @@ namespace it2a_databaze
             DataContext = this;
         }
 
+        private void Button_PridatKopacky(object sender, RoutedEventArgs e)
+        {
+            if (int.TryParse(tbCena.Text, out int cena))
+            {
+                ModelyKopacek.Add(new Kopacky
+                {
+                    Znacka = tbZnacka.Text,
+                    Model = tbModel.Text,
+                    Barva = tbBarva.Text,
+                    Cena = cena,
+                    AktualnePouzivam = cbPouzivam.IsChecked == true
+                });
+            }
+            else
+            {
+                MessageBox.Show("Cena musí být číslo!");
+            }
+        }
+
+        private void Button_NacistDoFormulare(object sender, RoutedEventArgs e)
+        {
+            if (dgKopacky.SelectedItem is Kopacky k)
+            {
+                tbZnacka.Text = k.Znacka;
+                tbModel.Text = k.Model;
+                tbBarva.Text = k.Barva;
+                tbCena.Text = k.Cena.ToString();
+                cbPouzivam.IsChecked = k.AktualnePouzivam;
+            }
+        }
+
+        private void Button_UlozitZmeny(object sender, RoutedEventArgs e)
+        {
+            if (dgKopacky.SelectedItem is Kopacky k && int.TryParse(tbCena.Text, out int cena))
+            {
+                k.Znacka = tbZnacka.Text;
+                k.Model = tbModel.Text;
+                k.Barva = tbBarva.Text;
+                k.Cena = cena;
+                k.AktualnePouzivam = cbPouzivam.IsChecked == true;
+
+                dgKopacky.Items.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Cena musí být číslo!");
+            }
+        }
+
+        private void Button_SmazatVybrane(object sender, RoutedEventArgs e)
+        {
+            if (dgKopacky.SelectedItem is Kopacky k)
+            {
+                ModelyKopacek.Remove(k);
+            }
+        }
+
+        private void Button_VycistitFormular(object sender, RoutedEventArgs e)
+        {
+            tbZnacka.Clear();
+            tbModel.Clear();
+            tbBarva.Clear();
+            tbCena.Clear();
+            cbPouzivam.IsChecked = false;
+        }
+
         private void dgKopacky_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+
         }
 
         private void tbZnacka_TextChanged(object sender, TextChangedEventArgs e)
@@ -57,31 +123,6 @@ namespace it2a_databaze
         }
 
         private void cbPouzivam_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_PridatKopacky(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void Button_NacistDoFormulare(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void Button_UpravitVybrane(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_SmazatVybrane(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_VycistitFormular(object sender, RoutedEventArgs e)
         {
 
         }

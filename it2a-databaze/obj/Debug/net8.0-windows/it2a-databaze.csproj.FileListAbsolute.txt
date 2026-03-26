@@ -22,3 +22,4 @@ H:\PRG\IT2A-databaze-main\IT2A-databaze-main\it2a-databaze\obj\Debug\net8.0-wind
 H:\PRG\IT2A-databaze-main\IT2A-databaze-main\it2a-databaze\obj\Debug\net8.0-windows\it2a-databaze.pdb
 H:\PRG\IT2A-databaze-main\IT2A-databaze-main\it2a-databaze\obj\Debug\net8.0-windows\it2a-databaze.genruntimeconfig.cache
 H:\PRG\IT2A-databaze-main\IT2A-databaze-main\it2a-databaze\obj\Debug\net8.0-windows\ref\it2a-databaze.dll
+H:\PRG\IT2A-databaze-main\IT2A-databaze-main\it2a-databaze\obj\Debug\net8.0-windows\it2a-databaze.sourcelink.json

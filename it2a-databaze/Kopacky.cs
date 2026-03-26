@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace it2a_databaze
 {
-    internal class Kopacky
+    public class Kopacky
     {
         public string Znacka { get; set; }
         public string Model { get; set; }

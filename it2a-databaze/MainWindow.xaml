@@ -13,7 +13,6 @@
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
 
-        <!-- DataGrid -->
         <DataGrid x:Name="dgKopacky"
                   ItemsSource="{Binding ModelyKopacek}"
                   Grid.Column="0"
@@ -32,7 +31,6 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <!-- Pravý panel -->
         <StackPanel Grid.Column="1">
 
             <TextBlock Text="Evidence kopaček"
@@ -56,10 +54,10 @@
                       Content="Aktuálně používám"
                       Margin="0,0,0,10" Checked="cbPouzivam_Checked"/>
 
-            <Button Content="Přidat kopačky" Margin="0,5" Click="Button_PridatKopacky"/>
-            <Button Content="Načíst vybrané do formuláře" Margin="0,5" Click="Button_NacistDoFormulare"/>
-            <Button Content="Upravit vybrané kopačky" Margin="0,5" Click="Button_UpravitVybrane"/>
-            <Button Content="Smazat vybrané kopačky" Margin="0,5" Click="Button_SmazatVybrane"/>
+            <Button Content="Přidat" Margin="0,5" Click="Button_PridatKopacky"/>
+            <Button Content="Načíst vybrané" Margin="0,5" Click="Button_NacistDoFormulare"/>
+            <Button Content="Uložit změny" Margin="0,5" Click="Button_UlozitZmeny"/>
+            <Button Content="Smazat vybrané" Margin="0,5" Click="Button_SmazatVybrane"/>
             <Button Content="Vyčistit formulář" Margin="0,5" Click="Button_VycistitFormular"/>
 
         </StackPanel>
